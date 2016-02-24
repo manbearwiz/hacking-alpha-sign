@@ -102,7 +102,7 @@ namespace AlphaProtocolExampleNET
             StringBuilder Packet = new StringBuilder();
             StringBuilder curSegment = new StringBuilder();
             bool InSegment = false;
-            string temp = AsciiPacket.Replace("\x04","\x03\x04"); // insert ETX in front of EOT
+            string temp = AsciiPacket.Replace("\x04", "\x03\x04"); // insert ETX in front of EOT
             for (int i = 0; i < temp.Length; i++)
             {
                 Packet.Append(temp[i]);     // add current byte to packet
@@ -145,13 +145,13 @@ namespace AlphaProtocolExampleNET
             ' before resuming further communications.*/
             StringBuilder Cmd = new StringBuilder();
             Cmd.Append(cNULL, 20);         // Leading NULLS for the sign to autobaud against
-            Cmd.Append( cSOH );            //<SOH>
-            Cmd.Append( SignTypecode );    //CONST for Sign Type Code (See top of code to change)
-            Cmd.Append( SignAddress );     //CONST for Sign Network Address (See top of code to change)
-            Cmd.Append( cSTX );            //<STX>
-            Cmd.Append( "E" );             //COMMAND CODE (E = WRITE SPECIAL FUNCTION)
-            Cmd.Append( "$" );             //SPECIAL FUNCTIONS LABEL ($ = SET MEMORY CONFIGURATION)
-            Cmd.Append( cEOT );            //<EOT>
+            Cmd.Append(cSOH);            //<SOH>
+            Cmd.Append(SignTypecode);    //CONST for Sign Type Code (See top of code to change)
+            Cmd.Append(SignAddress);     //CONST for Sign Network Address (See top of code to change)
+            Cmd.Append(cSTX);            //<STX>
+            Cmd.Append("E");             //COMMAND CODE (E = WRITE SPECIAL FUNCTION)
+            Cmd.Append("$");             //SPECIAL FUNCTIONS LABEL ($ = SET MEMORY CONFIGURATION)
+            Cmd.Append(cEOT);            //<EOT>
             SendData(Cmd.ToString());
         } // END: ClearMemory()
 
@@ -171,17 +171,17 @@ namespace AlphaProtocolExampleNET
             Cmd.Append(cSTX);            //<STX>
             Cmd.Append("E");             //COMMAND CODE (E = WRITE SPECIAL FUNCTION)
             Cmd.Append("$");             //SPECIAL FUNCTIONS LABEL ($ = SET MEMORY CONFIGURATION)
-            
+
             // TEXT file 'A'
             Cmd.Append("A");            // What File Label do we want to configure
             Cmd.Append("A");            // What type of memory are we configuring this as (A=Text file; B=String File; D=DOTS Picture File)
             Cmd.Append("L");            // Is this file able to be editted using a remote control
-                //L=Locked - Means that the file can not be accessed via an IR keyboard.
-                //U=Unlocked - Means that the file can be accessed and changed via an IR keyboard.
+            //L=Locked - Means that the file can not be accessed via an IR keyboard.
+            //U=Unlocked - Means that the file can be accessed and changed via an IR keyboard.
             Cmd.Append("1000");         // SIZE - See manual page 21
-                //Note: A string file can be a maximum of 125 bytes (007d)
+            //Note: A string file can be a maximum of 125 bytes (007d)
             Cmd.Append("FF00");         // QQQQ - See manual page 21
-            
+
             // TEXT file 'B'
             Cmd.Append("B");            // File Label
             Cmd.Append("A");            // File Type
@@ -385,9 +385,9 @@ namespace AlphaProtocolExampleNET
             Cmd.Append("1");             // Which color to display text in
 
             Cmd.Append("TIME: ");        // Text in text message
-            
+
             Cmd.Append("\x13");          // Command Code to display time of day
-            
+
             Cmd.Append(" ON ");          // White space and text in text message
 
             Cmd.Append("\x0B");          // CALL DATE command code (pg 81)
@@ -426,7 +426,7 @@ namespace AlphaProtocolExampleNET
             Cmd.Append("A");             // FILE LABEL (Must have been configured in Memory command unless using "z" as Sign Type Code..)  See page 10
             Cmd.Append("08");            // Height of picture file in pixels (Hex value)
             Cmd.Append("23");            // Width of picture file in pixels (Hex value)
-                                        // Size must match that given in configure memory
+            // Size must match that given in configure memory
 
             SendData(Cmd.ToString());
             CommMan.DelayAnnounced(100);    //Following the Width bytes, there should be at least a 100 millisecond delay (not to exceed the                                            
@@ -784,7 +784,7 @@ namespace AlphaProtocolExampleNET
 
             Cmd.Append("\x08");         // Command Code combination
             Cmd.Append("z");            //   to insert Counter 1 (Extended Char set, pg 87)
-                                        // (Values 0x7A "z" to 0x7E "~" = Counter 1 to 5)
+            // (Values 0x7A "z" to 0x7E "~" = Counter 1 to 5)
 
             Cmd.Append("!");            // Some more text for the end
             // END MESSAGE
@@ -835,39 +835,39 @@ namespace AlphaProtocolExampleNET
 
             Cmd.Append("1");            // Counter 1
             Cmd.Append("E0");           // Counter Control byte in hexadecimal characters (0xE0 = 1110 0000)
-                /*  Counter Control Byte Bit Breakdown
-                    bit 7 — 1 = counter on, 0 = counter off (default = 0)
-                    bit 6 — 1 = increment, 0 = decrement (default = 1)
-                    bit 5 — 1 = count minutes, 0 = don’t count minutes (default = 1)
-                    bit 4 — 1 = count hours, 0 = don’t count hours (default = 0)
-                    bit 3 — 1 = count days, 0 = don’t count days (default = 0)
-                    bit 2 — 1 = weekends on, 0 = weekends off (default = 1)
-                    bit 1 — 1 = Auto Reload ON, Auto Reload OFF (default = 0)
-                    bit 0 — 0 (default = 0)*/
+            /*  Counter Control Byte Bit Breakdown
+                bit 7 — 1 = counter on, 0 = counter off (default = 0)
+                bit 6 — 1 = increment, 0 = decrement (default = 1)
+                bit 5 — 1 = count minutes, 0 = don’t count minutes (default = 1)
+                bit 4 — 1 = count hours, 0 = don’t count hours (default = 0)
+                bit 3 — 1 = count days, 0 = don’t count days (default = 0)
+                bit 2 — 1 = weekends on, 0 = weekends off (default = 1)
+                bit 1 — 1 = Auto Reload ON, Auto Reload OFF (default = 0)
+                bit 0 — 0 (default = 0)*/
             Cmd.Append("FF");           // Counter Start Time (FF = ALWAYS) See App.B pg51
-                                        //  Time codes “FD” and “FE” are not valid as Counter Start Times.
+            //  Time codes “FD” and “FE” are not valid as Counter Start Times.
             Cmd.Append("00");           // Counter Stop Time (00 = Never) See App.B pg51
-                                        //  Time codes “FD”, “FE”, and “FF” are not valid as Counter Stop Times.
+            //  Time codes “FD”, “FE”, and “FF” are not valid as Counter Stop Times.
             Cmd.Append("00000000");     // Counter Start BCD Value 8 characters '0'-'9' (Loaded when Reload is ON and target reached)
             Cmd.Append("00000001");     // Counter Step BCD Value 8 characters '0'-'9'
             Cmd.Append("00000000");     // Counter Current BCD Value 8 characters '0'-'9'
             Cmd.Append("00000005");     // Counter Target BCD Value 8 characters '0'-'9'
             Cmd.Append("10");           // Counter Target File Byte (which TEXT files should be switched ON? In this case file "1")
-                /*  Counter Target File Byte Bit Breakdown
-                    bit 7 — 0 (default = 0)
-                    bit 6 — 0 (default = 0)
-                    bit 5 — 0 (default = 0)
-                    bit 4 — Target File 1: 1 = enabled, 0 = disabled (default = 0)
-                    bit 3 — Target File 2: 1 = enabled, 0 = disabled (default = 0)
-                    bit 2 — Target File 3: 1 = enabled, 0 = disabled (default = 0)
-                    bit 1 — Target File 4: 1 = enabled, 0 = disabled (default = 0)
-                    bit 0 — Target File 5: 1 = enabled, 0 = disabled (default = 0)*/
+            /*  Counter Target File Byte Bit Breakdown
+                bit 7 — 0 (default = 0)
+                bit 6 — 0 (default = 0)
+                bit 5 — 0 (default = 0)
+                bit 4 — Target File 1: 1 = enabled, 0 = disabled (default = 0)
+                bit 3 — Target File 2: 1 = enabled, 0 = disabled (default = 0)
+                bit 2 — Target File 3: 1 = enabled, 0 = disabled (default = 0)
+                bit 1 — Target File 4: 1 = enabled, 0 = disabled (default = 0)
+                bit 0 — Target File 5: 1 = enabled, 0 = disabled (default = 0)*/
             Cmd.Append("00");           // Change Minutes Sync in hex (00 [:00] - 3B [:59])
-                // This value is used when the Counter Control Byte is set to count hours or days. 
-                // If minutes are being counted, this value is ignored. However, a value must still be supplied.
+            // This value is used when the Counter Control Byte is set to count hours or days. 
+            // If minutes are being counted, this value is ignored. However, a value must still be supplied.
             Cmd.Append("00");           // Change Hours Sync in hex (00 [12am] - 17 [11 pm])
-                // This value is used when the Counter Control Byte is set to count days. 
-                // If minutes or hours are being counted, this value is ignored. However, a value must still be supplied.
+            // This value is used when the Counter Control Byte is set to count days. 
+            // If minutes or hours are being counted, this value is ignored. However, a value must still be supplied.
 
             Cmd.Append("2");            // Counter 2
             Cmd.Append("00");           // Counter Control byte (just turn it off)

@@ -33,7 +33,7 @@ namespace AlphaProtocolExampleNET
             frmMain_Move(this, null);
             chkUsePocsag_CheckedChanged(this.chkUsePocsag, null);
             chkUseChecksums_CheckedChanged(this.chkUseChecksums, null);
-            tabControl1_SelectedIndexChanged(this.tabControl1, null); 
+            tabControl1_SelectedIndexChanged(this.tabControl1, null);
         }
 
         private void frmMain_Move(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace AlphaProtocolExampleNET
         private int GetTextInt(string Str)
         {
             int temp;
-            if (!int.TryParse(Str.Trim(),out temp)) return 0;
+            if (!int.TryParse(Str.Trim(), out temp)) return 0;
             return temp;
         }
 
@@ -220,7 +220,7 @@ namespace AlphaProtocolExampleNET
                 InfoBox("The simulator does not support the use of multiple transmissions - so this demo will not operate correctly.",
                     "Simulator Warning!!");
             }
-            try { Alpha.SendStringFiles_Production(Good,Bad); }
+            try { Alpha.SendStringFiles_Production(Good, Bad); }
             catch (Exception ex) { ErrorBox(ex.Message, "Error Sending Command"); }
             ControlsEn(true);
         }
@@ -279,7 +279,7 @@ namespace AlphaProtocolExampleNET
                 InfoBox("The simulator does not support the use of multiple transmissions - so this demo will not operate correctly.",
                     "Simulator Warning!!");
             }
-            try { Alpha.SendStringFiles_StringAB(MsgA,MsgB); }
+            try { Alpha.SendStringFiles_StringAB(MsgA, MsgB); }
             catch (Exception ex) { ErrorBox(ex.Message, "Error Sending Command"); }
             ControlsEn(true);
         }

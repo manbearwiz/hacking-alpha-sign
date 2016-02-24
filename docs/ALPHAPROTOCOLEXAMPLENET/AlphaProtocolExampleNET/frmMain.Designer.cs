@@ -86,12 +86,12 @@
             this.cmdCounterConfig = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.grpCustChar = new System.Windows.Forms.GroupBox();
+            this.cmdCC_ClearChar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmdCC_SendText = new System.Windows.Forms.Button();
             this.cmdCC_SendChar = new System.Windows.Forms.Button();
             this.cmdCC_ConfigMem = new System.Windows.Forms.Button();
             this.cmdCC_ClearMem = new System.Windows.Forms.Button();
-            this.cmdCC_ClearChar = new System.Windows.Forms.Button();
             this.grpProtocol.SuspendLayout();
             this.grpCommunication.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -140,7 +140,7 @@
             this.chkUsePocsag.TabIndex = 0;
             this.chkUsePocsag.Text = "Use POCSAG\r\n (ASCII Printable)";
             this.toolTip1.SetToolTip(this.chkUsePocsag, "Pocsag represents control characters as two character combination of ] and the de" +
-                    "sired code + 32 decimal");
+        "sired code + 32 decimal");
             this.chkUsePocsag.UseVisualStyleBackColor = true;
             this.chkUsePocsag.CheckedChanged += new System.EventHandler(this.chkUsePocsag_CheckedChanged);
             // 
@@ -299,7 +299,7 @@
             this.label6.Size = new System.Drawing.Size(394, 32);
             this.label6.TabIndex = 0;
             this.label6.Text = "Application should launch and Use Alpha Simulator Application to emulate the sign" +
-                ". (Not all functions supported by simulator)";
+    ". (Not all functions supported by simulator)";
             // 
             // grpStdSamples
             // 
@@ -407,7 +407,7 @@
             this.grpOutput.TabIndex = 3;
             this.grpOutput.TabStop = false;
             this.grpOutput.Text = "Output (Non-printable characters shown in hexadecimal form with brackets {XX}. Ne" +
-                "w lines added between sends for clarity. )";
+    "w lines added between sends for clarity. )";
             // 
             // txOutput
             // 
@@ -705,6 +705,16 @@
             this.grpCustChar.TabStop = false;
             this.grpCustChar.Text = "Custom Character Sample";
             // 
+            // cmdCC_ClearChar
+            // 
+            this.cmdCC_ClearChar.Location = new System.Drawing.Point(6, 163);
+            this.cmdCC_ClearChar.Name = "cmdCC_ClearChar";
+            this.cmdCC_ClearChar.Size = new System.Drawing.Size(133, 30);
+            this.cmdCC_ClearChar.TabIndex = 7;
+            this.cmdCC_ClearChar.Text = "Clear Smile Char";
+            this.cmdCC_ClearChar.UseVisualStyleBackColor = true;
+            this.cmdCC_ClearChar.Click += new System.EventHandler(this.cmdCC_ClearChar_Click);
+            // 
             // label11
             // 
             this.label11.Location = new System.Drawing.Point(9, 208);
@@ -752,16 +762,6 @@
             this.cmdCC_ClearMem.Text = "Clear Memory";
             this.cmdCC_ClearMem.UseVisualStyleBackColor = true;
             this.cmdCC_ClearMem.Click += new System.EventHandler(this.cmdSS_ClearMem_Click);
-            // 
-            // cmdCC_ClearChar
-            // 
-            this.cmdCC_ClearChar.Location = new System.Drawing.Point(6, 163);
-            this.cmdCC_ClearChar.Name = "cmdCC_ClearChar";
-            this.cmdCC_ClearChar.Size = new System.Drawing.Size(133, 30);
-            this.cmdCC_ClearChar.TabIndex = 7;
-            this.cmdCC_ClearChar.Text = "Clear Smile Char";
-            this.cmdCC_ClearChar.UseVisualStyleBackColor = true;
-            this.cmdCC_ClearChar.Click += new System.EventHandler(this.cmdCC_ClearChar_Click);
             // 
             // frmMain
             // 
