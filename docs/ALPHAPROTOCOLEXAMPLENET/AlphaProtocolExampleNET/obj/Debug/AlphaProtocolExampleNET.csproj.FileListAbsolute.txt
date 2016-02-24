@@ -1,0 +1,16 @@
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\bin\Debug\AlphaProtocolExampleNET.exe
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\bin\Debug\AlphaProtocolExampleNET.pdb
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\ResolveAssemblyReference.cache
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.frmMain.resources
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.Properties.Resources.resources
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.csproj.GenerateResource.Cache
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.exe
+H:\Optics\Eds Other stuff\VSS\Custom\AlphaProtocolExampleNET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.pdb
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.exe
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.pdb
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\bin\Debug\AlphaProtocolExampleNET.exe
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\bin\Debug\AlphaProtocolExampleNET.pdb
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\ResolveAssemblyReference.cache
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.frmMain.resources
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.Properties.Resources.resources
+C:\_VM_SHARED\VSS_SW\Custom\ALPHAPROTOCOLEXAMPLENET\AlphaProtocolExampleNET\obj\Debug\AlphaProtocolExampleNET.csproj.GenerateResource.Cache
